@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="input_form">
-        <form>
-            <div>{{ input_form }}</div>
-            <div>
-                <button>Generate certificate</button>
-            </div>
+    <div>
+        <form id="input_form"method="POST">
+            {% csrf_token %}
+            <input id="name" type="text" placeholder="name">
+            <input id="course" type="text" placeholder="course">
+            <button id="save_btn" value="Generate">Generate</button>
         </form>
     </div>
     <div id="certificates">
@@ -21,5 +23,6 @@
         <a href="{% url 'download_file' pk=cert.pk %}">Download file</a>
         {% endfor %}
     </div>
+    <script src={% static "JS/index.js" %}></script>
 </body>
 </html>
