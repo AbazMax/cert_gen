@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    test TEST
+    <div id="input_form">
+        <form>
+            <div>{{ input_form }}</div>
+            <div>
+                <button>Generate certificate</button>
+            </div>
+        </form>
+    </div>
+    <div id="certificates">
+        {% for cert in certificates %}
+        <div>{{ cert.name }}, {{ cert.course }}, {{ cert.date }}</div>
+        <a href="{% url 'download_file' pk=cert.pk %}">Download file</a>
+        {% endfor %}
+    </div>
 </body>
 </html>
