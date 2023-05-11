@@ -15,7 +15,7 @@ function save_data(){
     obj.course = inp_cource.value;
     console.log(obj)
 
-    fetch('', {
+    fetch('generating_file', {
         method: 'POST',
         credentials: "same-origin",
         headers: {
@@ -28,6 +28,7 @@ function save_data(){
     .then(data => {
         console.log(data);
         document.location = '';
+        console.log('done')
     });
 }
 
