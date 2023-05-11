@@ -5,9 +5,10 @@ class Cert(models.Model):
     course = models.CharField(max_length=50)
     date = models.DateField(auto_now=True)
     cert = models.FileField(upload_to=('create_pdf_cert/certificates/'))
+    created = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ('date',)
+        ordering = ('-created',)
         verbose_name_plural = 'Certificates'
         
     def __str__(self):

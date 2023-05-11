@@ -13,7 +13,8 @@ function save_data(){
     const inp_cource = document.querySelector('#course');
     obj.name = inp_name.value;
     obj.course = inp_cource.value;
-    console.log(obj)
+    indicator = document.querySelector('#indicator');
+    indicator.innerHTML = 'Please wait!';
 
     fetch('generating_file', {
         method: 'POST',
@@ -26,9 +27,8 @@ function save_data(){
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         document.location = '';
-        console.log('done')
+        indicator.innerHTML = '';
     });
 }
 
