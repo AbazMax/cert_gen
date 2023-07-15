@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('generating_file', views.generating_file, name='generating_file'),
+    path('cert', views.generating_file, name='cert'),
     path('download/<int:pk>/', views.download_file, name='download_file'),
 ]

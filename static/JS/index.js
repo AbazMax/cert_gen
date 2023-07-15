@@ -16,7 +16,7 @@ function save_data(){
     indicator = document.querySelector('#indicator');
     indicator.innerHTML = 'Please wait!';
 
-    fetch('generating_file', {
+    fetch('cert', {
         method: 'POST',
         credentials: "same-origin",
         headers: {
