@@ -34,6 +34,6 @@ python manage.py runserver
 ```
 
 6. To generate certificate send HTTP request or use homepage (localhost/):
-	HTTP method: POST, JSON request example: { “name”: “xxx”, “course”: “yyy” }
+	Endpoint: cert, HTTP method: POST, JSON request example: { “name”: “xxx”, “course”: “yyy” }
 
 7. To get admin panel use entered in p.4 login and password in browser (localhost/admin). There you can manage created certificates.
